@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Container from './components/Container';
+import Header from './components/Header'
+
+import { loremIpsum } from 'lorem-ipsum';
+
 
 function App() {
+  const a = loremIpsum({count:5})
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Container words={a} font='black' styler='shimmer' id='first'/>
+      
+      <Container words={a} styler='containers shimmer' id='second'/>
+       
+      <Container words={a} styler='shimmer' id='third'/>
+       
+      <Container words={a} styler='containers' id='forth'/>
+       
+      <Container words={a} styler='shimmer' id='fifth'/>
     </div>
   );
 }
